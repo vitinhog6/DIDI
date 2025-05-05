@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meu Controle de Diárias</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="assets/chart.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Meu Controle de Diárias</h1>
+    <button id="toggleTheme">🌞 / 🌙</button>
+  </header>
+  <main>
+    <section id="calendario"></section>
+    <section id="entrada">
+      <h2>Adicionar Diária</h2>
+      <input type="date" id="dataDiaria" />
+      <input type="number" id="valorDiaria" placeholder="Valor da diária" />
+      <button onclick="adicionarDiaria()">Salvar</button>
+    </section>
+    <section id="despesas">
+      <h2>Adicionar Despesa</h2>
+      <input type="date" id="dataDespesa" />
+      <input type="number" id="valorDespesa" placeholder="Valor da despesa" />
+      <select id="categoriaDespesa">
+        <option>Transporte</option>
+        <option>Alimentação</option>
+        <option>Materiais</option>
+      </select>
+      <button onclick="adicionarDespesa()">Salvar</button>
+    </section>
+    <section id="relatorio"></section>
+    <canvas id="graficoGanhosDespesas" width="400" height="200"></canvas>
+    <section id="exportar">
+      <button onclick="exportarCSV()">Exportar CSV</button>
+      <button onclick="exportarPDF()">Exportar PDF</button>
+    </section>
+  </main>
+  <script src="script.js"></script>
+  <script src="chart.js"></script>
+  <script src="export.js"></script>
+  <script src="relatorio.js"></script>
+</body>
+</html>
